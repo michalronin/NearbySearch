@@ -8,12 +8,22 @@
 
 import Foundation
 
-struct Place: Codable {
-    let name: String
-    let rating: Int
-    let openingHours: OpeningHours
+struct GoogleResponse: Codable {
+    let results: [Place]
+    
+    struct Place: Codable {
+        let name: String
+        let rating: Double
+        let openingHours: OpeningHours?
+        
+        struct OpeningHours: Codable {
+            let openNow: Bool
+        }
+    }
+    
+    
 }
 
-struct OpeningHours: Codable {
-    let openNow: Bool
-}
+
+
+

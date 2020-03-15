@@ -12,14 +12,15 @@ import CoreLocation
 class NetworkManager {
     static let shared = NetworkManager()
     private let apiKey = "&key=AIzaSyDMJixaDksmb__33XzQiTjL3mRjoxcjcek"
-    private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types=food"
+    private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types=restaurant"
     
     private init() {}
     
-    func getPlaces(for location: CLLocation, completed: @escaping (Result<[Place], ErrorMessage>) -> Void) {
+    func getPlaces(for location: CLLocation, completed: @escaping (Result<[GoogleResponse.Place], ErrorMessage>) -> Void) {
         let lat = String(location.coordinate.latitude)
         let lon = String(location.coordinate.longitude)
         let endpoint = baseUrl + "&location=" + lat + "," + lon + "&radius=500" + apiKey
+        print(endpoint)
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidRequest))
             return
@@ -44,8 +45,8 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let places = try decoder.decode([Place].self, from: data)
-                completed(.success(places))
+                let googleResponse = try decoder.decode(GoogleResponse.self, from: data)
+                completed(.success(googleResponse.results))
             } catch {
                 completed(.failure(.invalidData))
             }

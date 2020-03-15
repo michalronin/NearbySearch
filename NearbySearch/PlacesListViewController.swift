@@ -14,7 +14,7 @@ class PlacesListViewController: UIViewController {
     var currentLocation: CLLocation?
     var tableView: UITableView?
     
-    var places: [Place] = []
+    var places: [GoogleResponse.Place] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class PlacesListViewController: UIViewController {
         locationManager?.requestAlwaysAuthorization()
         locationManager?.requestLocation()
         currentLocation = locationManager?.location
+        getPlaces(for: currentLocation!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +50,20 @@ class PlacesListViewController: UIViewController {
             tableView?.backgroundColor = .white
         }
         tableView?.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
+        tableView?.dataSource = self
+    }
+    
+    func getPlaces(for location: CLLocation) {
+        NetworkManager.shared.getPlaces(for: location) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let places):
+                self.places.append(contentsOf: places)
+            case .failure(let error):
+                print("Error loading: \(error.rawValue)")
+            }
+        }
     }
 }
 
@@ -59,7 +74,9 @@ extension PlacesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseID) as! PlaceTableViewCell
+        cell.set(place: places[indexPath.row])
+        return cell
     }
 }
 
@@ -78,6 +95,7 @@ extension PlacesListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
             print("location: \(locations.first ?? CLLocation())")
+            currentLocation = locations.first
         }
     }
 }

@@ -19,7 +19,7 @@ class PlaceTableViewCell: UITableViewCell {
         configureNameLabel()
     }
     
-    func set(place: Place) {
+    func set(place: GoogleResponse.Place) {
         nameLabel.text = place.name
     }
     
