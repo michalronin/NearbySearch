@@ -16,6 +16,7 @@ class PlacesListViewController: UIViewController {
     
     var places: [Place] = []
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -47,9 +48,11 @@ class PlacesListViewController: UIViewController {
         } else {
             tableView?.backgroundColor = .white
         }
+        tableView?.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
     }
 }
 
+// MARK: - UITableViewDataSource
 extension PlacesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
@@ -60,6 +63,7 @@ extension PlacesListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - CLLocationManagerDelegate
 extension PlacesListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
          print("error: \(error.localizedDescription)")
