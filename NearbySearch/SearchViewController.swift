@@ -9,13 +9,32 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-    let searchLabel = TitleLabel()
-    let searchButton = SearchButton()
+    let searchLabel = TitleLabel(textAlignment: .center, fontSize: 24)
+    let searchButton = SearchButton(backgroundColor: .systemTeal, title: "Search Nearby")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-        
+        configure()
+    }
+    
+    private func configure() {
+        view.addSubview(searchLabel)
+        view.addSubview(searchButton)
+        searchLabel.text = "Tap the button to find Places of Interest near you!"
+        searchLabel.numberOfLines = 2
+        let padding: CGFloat = 12
+        NSLayoutConstraint.activate([
+            searchLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            searchLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            searchLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            searchLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            
+            searchButton.topAnchor.constraint(equalTo: searchLabel.bottomAnchor, constant: padding),
+            searchButton.centerXAnchor.constraint(equalTo: searchLabel.centerXAnchor),
+            searchButton.widthAnchor.constraint(equalToConstant: 200),
+            searchButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 }
