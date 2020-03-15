@@ -26,7 +26,12 @@ class TitleLabel: UILabel {
     }
     
     private func configure() {
-        textColor = .label
+        if #available(iOS 13.0, *) {
+            textColor = .label
+        } else {
+            // Fallback on earlier versions
+            textColor = .black
+        }
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9
         lineBreakMode = .byTruncatingTail
