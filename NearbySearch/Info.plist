@@ -54,5 +54,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Application requires your permission for location data in order to perform nearby search</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Application requires your permission for location data in order to perform nearby search</string>
 </dict>
 </plist>
