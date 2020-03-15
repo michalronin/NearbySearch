@@ -19,11 +19,24 @@ class SearchViewController: UIViewController {
         configure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @objc func pushPlacesListViewController() {
+        let placesListVC = PlacesListViewController()
+        placesListVC.title = "Nearby Places"
+        navigationController?.pushViewController(placesListVC, animated: true)
+    }
+    
     private func configure() {
         view.addSubview(searchLabel)
         view.addSubview(searchButton)
         searchLabel.text = "Tap the button to find Places of Interest near you!"
         searchLabel.numberOfLines = 2
+        
         let padding: CGFloat = 12
         NSLayoutConstraint.activate([
             searchLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
