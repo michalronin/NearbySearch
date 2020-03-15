@@ -36,8 +36,10 @@ class SearchViewController: UIViewController {
         view.addSubview(searchButton)
         searchLabel.text = "Tap the button to find Places of Interest near you!"
         searchLabel.numberOfLines = 2
+        searchButton.addTarget(self, action: #selector(pushPlacesListViewController), for: .touchUpInside)
         
         let padding: CGFloat = 12
+        
         NSLayoutConstraint.activate([
             searchLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
