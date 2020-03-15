@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3085857C241E6F1A003E6EA2 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857B241E6F1A003E6EA2 /* TitleLabel.swift */; };
 		30A220B8241E662E001C61A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A220B7241E662E001C61A4 /* AppDelegate.swift */; };
 		30A220BA241E662E001C61A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A220B9241E662E001C61A4 /* SceneDelegate.swift */; };
 		30A220C1241E662F001C61A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A220C0241E662F001C61A4 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3085857B241E6F1A003E6EA2 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		30A220B4241E662E001C61A4 /* NearbySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A220B7241E662E001C61A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A220B9241E662E001C61A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				30A220C2241E662F001C61A4 /* LaunchScreen.storyboard */,
 				30A220C5241E662F001C61A4 /* Info.plist */,
 				30A220CB241E68F6001C61A4 /* SearchViewController.swift */,
+				3085857B241E6F1A003E6EA2 /* TitleLabel.swift */,
 			);
 			path = NearbySearch;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30A220CC241E68F6001C61A4 /* SearchViewController.swift in Sources */,
+				3085857C241E6F1A003E6EA2 /* TitleLabel.swift in Sources */,
 				30A220B8241E662E001C61A4 /* AppDelegate.swift in Sources */,
 				30A220BA241E662E001C61A4 /* SceneDelegate.swift in Sources */,
 			);
