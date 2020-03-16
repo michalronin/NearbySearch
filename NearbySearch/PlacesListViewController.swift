@@ -107,7 +107,6 @@ extension PlacesListViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
-            print("location: \(locations.first ?? CLLocation())")
             currentLocation = locations.first
         }
     }
