@@ -21,12 +21,7 @@ class PlacesListViewController: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureTableView()
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.requestLocation()
-        currentLocation = locationManager?.location
-        getPlaces(for: currentLocation!)
+        configureLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,13 +53,21 @@ class PlacesListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
+    func configureLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.distanceFilter = 50
+        locationManager?.startUpdatingLocation()
+    }
+    
     func getPlaces(for location: CLLocation) {
         NetworkManager.shared.getPlaces(for: location) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let places):
-                self.places.append(contentsOf: places)
+                self.places = places
             case .failure(let error):
                 print("Error loading: \(error.rawValue)")
             }
@@ -108,6 +111,10 @@ extension PlacesListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
             currentLocation = locations.first
+            getPlaces(for: currentLocation!)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
