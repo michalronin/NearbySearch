@@ -61,6 +61,13 @@ class PlacesListViewController: UIViewController {
         locationManager?.requestLocation()
     }
     
+    func pushPlaceDetailViewController(place: GoogleResponse.Place) {
+        let detailVC = PlaceDetailViewController()
+        detailVC.place = place
+        detailVC.title = place.name
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func getPlaces(for location: CLLocation) {
         NetworkManager.shared.getPlaces(for: location) { [weak self] result in
             guard let self = self else { return }
@@ -96,6 +103,10 @@ extension PlacesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushPlaceDetailViewController(place: places[indexPath.row])
     }
 }
 
