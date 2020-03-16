@@ -61,7 +61,7 @@ class PlaceTableViewCell: UITableViewCell {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: padding),
             stackView.widthAnchor.constraint(equalTo: widthAnchor),
-            stackView.heightAnchor.constraint(equalToConstant: 20)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding)
         ])
     }
 }

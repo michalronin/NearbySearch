@@ -47,12 +47,15 @@ class PlacesListViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView)
         tableView.dataSource = self
+        tableView.delegate = self
         if #available(iOS 13.0, *) {
             tableView.backgroundColor = .systemBackground
         } else {
             tableView.backgroundColor = .white
         }
         tableView.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func getPlaces(for location: CLLocation) {
@@ -69,8 +72,8 @@ class PlacesListViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
-extension PlacesListViewController: UITableViewDataSource {
+// MARK: - UITableViewDataSource && UITableViewDelegate
+extension PlacesListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
     }
@@ -79,6 +82,14 @@ extension PlacesListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseID) as! PlaceTableViewCell
         cell.set(place: places[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
