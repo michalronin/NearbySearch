@@ -17,10 +17,13 @@ class PlaceTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureNameLabel()
+        configureStackView()
     }
     
     func set(place: GoogleResponse.Place) {
         nameLabel.text = place.name
+        openNowLabel.text = place.openingHours?.openNow.description
+        ratingLabel.text = String(place.rating)
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +51,8 @@ class PlaceTableViewCell: UITableViewCell {
         
         stackView.addArrangedSubview(openNowLabel)
         stackView.addArrangedSubview(ratingLabel)
+        
+        addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         

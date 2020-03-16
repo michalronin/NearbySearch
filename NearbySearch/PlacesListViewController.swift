@@ -12,7 +12,7 @@ import CoreLocation
 class PlacesListViewController: UIViewController {
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
-    var tableView: UITableView?
+    var tableView: UITableView!
     
     var places: [GoogleResponse.Place] = []
     
@@ -20,6 +20,7 @@ class PlacesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
+        configureTableView()
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
@@ -44,13 +45,14 @@ class PlacesListViewController: UIViewController {
     
     private func configureTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
+        view.addSubview(tableView)
+        tableView.dataSource = self
         if #available(iOS 13.0, *) {
-            tableView?.backgroundColor = .systemBackground
+            tableView.backgroundColor = .systemBackground
         } else {
-            tableView?.backgroundColor = .white
+            tableView.backgroundColor = .white
         }
-        tableView?.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
-        tableView?.dataSource = self
+        tableView.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
     }
     
     func getPlaces(for location: CLLocation) {
