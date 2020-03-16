@@ -51,6 +51,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3085858B241FA15B003E6EA2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				30A220CB241E68F6001C61A4 /* SearchViewController.swift */,
+				3085857F241E7989003E6EA2 /* PlacesListViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3085858C241FA17F003E6EA2 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				30858591241FA1D5003E6EA2 /* Cells */,
+				30858590241FA1CF003E6EA2 /* Buttons */,
+				3085858F241FA1C9003E6EA2 /* Labels */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3085858D241FA1A1003E6EA2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				30858585241E8913003E6EA2 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3085858E241FA1B2003E6EA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30858583241E8522003E6EA2 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3085858F241FA1C9003E6EA2 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				30858589241E9A92003E6EA2 /* BodyLabel.swift */,
+				3085857B241E6F1A003E6EA2 /* TitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		30858590241FA1CF003E6EA2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3085857D241E7111003E6EA2 /* SearchButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		30858591241FA1D5003E6EA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30858587241E94FE003E6EA2 /* PlaceTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		30858592241FA1FB003E6EA2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				30858581241E7C91003E6EA2 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		30858593241FA216003E6EA2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				30A220B7241E662E001C61A4 /* AppDelegate.swift */,
+				30A220B9241E662E001C61A4 /* SceneDelegate.swift */,
+				30A220C0241E662F001C61A4 /* Assets.xcassets */,
+				30A220C2241E662F001C61A4 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		30A220AB241E662E001C61A4 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +149,13 @@
 		30A220B6241E662E001C61A4 /* NearbySearch */ = {
 			isa = PBXGroup;
 			children = (
-				30A220B7241E662E001C61A4 /* AppDelegate.swift */,
-				30A220B9241E662E001C61A4 /* SceneDelegate.swift */,
-				30A220C0241E662F001C61A4 /* Assets.xcassets */,
-				30A220C2241E662F001C61A4 /* LaunchScreen.storyboard */,
+				30858593241FA216003E6EA2 /* Support */,
+				30858592241FA1FB003E6EA2 /* Managers */,
+				3085858E241FA1B2003E6EA2 /* Model */,
+				3085858D241FA1A1003E6EA2 /* Utilities */,
+				3085858C241FA17F003E6EA2 /* Custom Views */,
+				3085858B241FA15B003E6EA2 /* Screens */,
 				30A220C5241E662F001C61A4 /* Info.plist */,
-				30A220CB241E68F6001C61A4 /* SearchViewController.swift */,
-				3085857B241E6F1A003E6EA2 /* TitleLabel.swift */,
-				3085857D241E7111003E6EA2 /* SearchButton.swift */,
-				3085857F241E7989003E6EA2 /* PlacesListViewController.swift */,
-				30858581241E7C91003E6EA2 /* NetworkManager.swift */,
-				30858583241E8522003E6EA2 /* Place.swift */,
-				30858585241E8913003E6EA2 /* ErrorMessage.swift */,
-				30858587241E94FE003E6EA2 /* PlaceTableViewCell.swift */,
-				30858589241E9A92003E6EA2 /* BodyLabel.swift */,
 			);
 			path = NearbySearch;
 			sourceTree = "<group>";
