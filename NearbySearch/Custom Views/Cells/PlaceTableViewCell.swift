@@ -11,19 +11,26 @@ import UIKit
 class PlaceTableViewCell: UITableViewCell {
     static let reuseID = "PlaceCell"
     let nameLabel = TitleLabel(textAlignment: .left, fontSize: 16)
-    let openNowLabel = BodyLabel(textAlignment: .left)
-    let ratingLabel = BodyLabel(textAlignment: .left)
+    let openNowLabel = BodyLabel(textAlignment: .center)
+    let ratingLabel = BodyLabel(textAlignment: .center)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        accessoryType = .disclosureIndicator
         configureNameLabel()
         configureStackView()
     }
     
     func set(place: GoogleResponse.Place) {
         nameLabel.text = place.name
-        openNowLabel.text = place.openingHours?.openNow.description
-        ratingLabel.text = String(place.rating)
+        if let openNow = place.openingHours?.openNow {
+            openNowLabel.text = openNow ? "Open now" : "Closed now"
+            openNowLabel.textColor = openNow ? .systemGreen : .systemRed
+        } else {
+            openNowLabel.text = "Unknown"
+        }
+        
+        ratingLabel.text = "Rating: \(String(place.rating))"
     }
     
     required init?(coder: NSCoder) {
