@@ -68,6 +68,9 @@ class PlacesListViewController: UIViewController {
             switch result {
             case .success(let places):
                 self.places = places
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print("Error loading: \(error.rawValue)")
             }
@@ -112,9 +115,6 @@ extension PlacesListViewController: CLLocationManagerDelegate {
         if locations.first != nil {
             currentLocation = locations.first
             getPlaces(for: currentLocation!)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
         }
     }
 }
