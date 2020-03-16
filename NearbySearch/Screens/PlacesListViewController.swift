@@ -58,7 +58,7 @@ class PlacesListViewController: UIViewController {
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         locationManager?.distanceFilter = 50
-        locationManager?.startUpdatingLocation()
+        locationManager?.requestLocation()
     }
     
     func getPlaces(for location: CLLocation) {
