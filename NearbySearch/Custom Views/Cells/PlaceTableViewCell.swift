@@ -11,7 +11,7 @@ import UIKit
 class PlaceTableViewCell: UITableViewCell {
     static let reuseID = "PlaceCell"
     let nameLabel = TitleLabel(textAlignment: .left, fontSize: 16)
-    let openNowLabel = BodyLabel(textAlignment: .center)
+    let openNowLabel = BodyLabel(textAlignment: .left)
     let ratingLabel = BodyLabel(textAlignment: .center)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
