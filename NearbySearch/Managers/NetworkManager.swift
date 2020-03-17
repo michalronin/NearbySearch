@@ -13,7 +13,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     let cache = NSCache<NSString, UIImage>()
     
-    private let apiKey = "&key=AIzaSyDMJixaDksmb__33XzQiTjL3mRjoxcjcek"
+    fileprivate let apiKey = "&key=AIzaSyDMJixaDksmb__33XzQiTjL3mRjoxcjcek"
     private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types=restaurant"
     
     private init() {}
@@ -55,4 +55,31 @@ class NetworkManager {
         }
         task.resume()
     }
+}
+
+extension PlaceImageView {
+        func downloadImage(from photoReference: String) {
+            let cacheKey = NSString(string: photoReference)
+            if let image = cache.object(forKey: cacheKey) {
+                self.image = image
+                return
+            }
+            let urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(NetworkManager.shared.apiKey)"
+            guard let url = URL(string: urlString) else { return }
+            
+            let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                guard let self = self else { return }
+                if error != nil { return }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+                guard let data = data else { return }
+                
+                guard let image = UIImage(data: data) else { return }
+                self.cache.setObject(image, forKey: cacheKey)
+                
+                DispatchQueue.main.async {
+                    self.image = image
+                }
+            }
+            task.resume()
+        }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class PlaceDetailViewController: UIViewController {
     var place: GoogleResponse.Place!
+    var placeImageView = PlaceImageView(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +23,16 @@ class PlaceDetailViewController: UIViewController {
         } else {
             view.backgroundColor = .white
         }
+        guard let photo = place.photos?.first?.photoReference else { return }
+        placeImageView.downloadImage(from: photo)
+        
+        view.addSubview(placeImageView)
+        
+        NSLayoutConstraint.activate([
+            placeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            placeImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            placeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            placeImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }

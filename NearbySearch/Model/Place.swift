@@ -15,9 +15,14 @@ struct GoogleResponse: Codable {
         let name: String
         let rating: Double
         let openingHours: OpeningHours?
+        let photos: [Photo]?
         
         struct OpeningHours: Codable {
             let openNow: Bool
+        }
+        
+        struct Photo: Codable {
+            let photoReference: String
         }
     }
     
