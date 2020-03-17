@@ -6,11 +6,13 @@
 //  Copyright © 2020 michalronin.com. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 
 class NetworkManager {
     static let shared = NetworkManager()
+    let cache = NSCache<NSString, UIImage>()
+    
     private let apiKey = "&key=AIzaSyDMJixaDksmb__33XzQiTjL3mRjoxcjcek"
     private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types=restaurant"
     
