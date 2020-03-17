@@ -23,6 +23,7 @@ class PlaceDetailViewController: UIViewController {
         } else {
             view.backgroundColor = .white
         }
+        adjustLargeTitleSize()
         guard let photo = place.photos?.first?.photoReference else { return }
         placeImageView.downloadImage(from: photo)
         

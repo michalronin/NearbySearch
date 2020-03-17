@@ -22,6 +22,7 @@
 		30A220CC241E68F6001C61A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A220CB241E68F6001C61A4 /* SearchViewController.swift */; };
 		30BB0AD4241FD35E009A1533 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */; };
 		30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */; };
+		30BB0ADA24212346009A1533 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD924212346009A1533 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		30A220CB241E68F6001C61A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageView.swift; sourceTree = "<group>"; };
+		30BB0AD924212346009A1533 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		30A220B6241E662E001C61A4 /* NearbySearch */ = {
 			isa = PBXGroup;
 			children = (
+				30BB0AD824212336009A1533 /* Extensions */,
 				30858593241FA216003E6EA2 /* Support */,
 				30858592241FA1FB003E6EA2 /* Managers */,
 				3085858E241FA1B2003E6EA2 /* Model */,
@@ -172,6 +175,14 @@
 				30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		30BB0AD824212336009A1533 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30BB0AD924212346009A1533 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 			files = (
 				3085857E241E7111003E6EA2 /* SearchButton.swift in Sources */,
 				30A220CC241E68F6001C61A4 /* SearchViewController.swift in Sources */,
+				30BB0ADA24212346009A1533 /* UIViewController+Ext.swift in Sources */,
 				3085857C241E6F1A003E6EA2 /* TitleLabel.swift in Sources */,
 				30858584241E8522003E6EA2 /* Place.swift in Sources */,
 				3085858A241E9A92003E6EA2 /* BodyLabel.swift in Sources */,
