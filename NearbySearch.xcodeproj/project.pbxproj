@@ -21,6 +21,7 @@
 		30A220C4241E662F001C61A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A220C2241E662F001C61A4 /* LaunchScreen.storyboard */; };
 		30A220CC241E68F6001C61A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A220CB241E68F6001C61A4 /* SearchViewController.swift */; };
 		30BB0AD4241FD35E009A1533 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */; };
+		30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		30A220C5241E662F001C61A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A220CB241E68F6001C61A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		3085858C241FA17F003E6EA2 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				30BB0AD52420CCC8009A1533 /* ImageViews */,
 				30858591241FA1D5003E6EA2 /* Cells */,
 				30858590241FA1CF003E6EA2 /* Buttons */,
 				3085858F241FA1C9003E6EA2 /* Labels */,
@@ -163,6 +166,14 @@
 			path = NearbySearch;
 			sourceTree = "<group>";
 		};
+		30BB0AD52420CCC8009A1533 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +254,7 @@
 				30A220B8241E662E001C61A4 /* AppDelegate.swift in Sources */,
 				30858580241E7989003E6EA2 /* PlacesListViewController.swift in Sources */,
 				30BB0AD4241FD35E009A1533 /* PlaceDetailViewController.swift in Sources */,
+				30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */,
 				30A220BA241E662E001C61A4 /* SceneDelegate.swift in Sources */,
 				30858588241E94FE003E6EA2 /* PlaceTableViewCell.swift in Sources */,
 			);
