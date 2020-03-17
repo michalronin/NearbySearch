@@ -64,13 +64,15 @@ extension PlaceImageView {
                 self.image = image
                 return
             }
-            let urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)&key=\(NetworkManager.shared.apiKey)"
+            let urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=\(photoReference)\(NetworkManager.shared.apiKey)"
             guard let url = URL(string: urlString) else { return }
             
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                print(urlString)
                 guard let self = self else { return }
                 if error != nil { return }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+                print(response.statusCode)
                 guard let data = data else { return }
                 
                 guard let image = UIImage(data: data) else { return }
