@@ -28,12 +28,12 @@ class PlaceDetailViewController: UIViewController {
         placeImageView.downloadImage(from: photo)
         
         view.addSubview(placeImageView)
-        
+        let padding: CGFloat = 20
         NSLayoutConstraint.activate([
-            placeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            placeImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            placeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            placeImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            placeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            placeImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+            placeImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            placeImageView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
