@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		303417EC24221AE700FB34A8 /* PlaceDetailContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */; };
 		303417EE2422434800FB34A8 /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303417ED2422434800FB34A8 /* PlaceType.swift */; };
+		307952F5242253E300BE8B88 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307952F4242253E300BE8B88 /* AlertViewController.swift */; };
 		3085857C241E6F1A003E6EA2 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857B241E6F1A003E6EA2 /* TitleLabel.swift */; };
 		3085857E241E7111003E6EA2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857D241E7111003E6EA2 /* SearchButton.swift */; };
 		30858580241E7989003E6EA2 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857F241E7989003E6EA2 /* PlacesListViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailContainerViewController.swift; sourceTree = "<group>"; };
 		303417ED2422434800FB34A8 /* PlaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceType.swift; sourceTree = "<group>"; };
+		307952F4242253E300BE8B88 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		3085857B241E6F1A003E6EA2 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		3085857D241E7111003E6EA2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		3085857F241E7989003E6EA2 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */,
+				307952F4242253E300BE8B88 /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				30858584241E8522003E6EA2 /* Place.swift in Sources */,
 				3085858A241E9A92003E6EA2 /* BodyLabel.swift in Sources */,
 				30858586241E8913003E6EA2 /* ErrorMessage.swift in Sources */,
+				307952F5242253E300BE8B88 /* AlertViewController.swift in Sources */,
 				30858582241E7C92003E6EA2 /* NetworkManager.swift in Sources */,
 				30A220B8241E662E001C61A4 /* AppDelegate.swift in Sources */,
 				30858580241E7989003E6EA2 /* PlacesListViewController.swift in Sources */,

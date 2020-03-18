@@ -81,7 +81,7 @@ class PlacesListViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                print("Error loading: \(error.rawValue)")
+                self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
                 
             }
         }
@@ -97,7 +97,7 @@ class PlacesListViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                print("Error loading: \(error.rawValue)")
+                self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
         
@@ -112,7 +112,7 @@ class PlacesListViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             case .failure(let error):
-                print("Error loading: \(error.rawValue)")
+                self.presentAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }

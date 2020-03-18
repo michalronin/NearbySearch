@@ -80,14 +80,16 @@ class PlaceDetailContainerViewController: UIViewController {
         if #available(iOS 13.0, *) {
             locationImageView.image = UIImage(systemName: "mappin.and.ellipse")
         } else {
-            // Fallback on earlier versions
+            locationImageView.image = UIImage(named: "mappin")
         }
+        locationImageView.tintColor = .lightGray
         locationLabel.text = place.vicinity
         if #available(iOS 13.0, *) {
             ratingImageView.image = UIImage(systemName: "star")
         } else {
-            // Fallback on earlier versions
+            ratingImageView.image = UIImage(named: "star")
         }
+        ratingImageView.tintColor = .lightGray
         ratingLabel.text = "Overall ratings: \(String(place.rating))"
     }
 }

@@ -24,7 +24,8 @@ class PlaceImageView: UIImageView {
     private func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = placeholderImage
+        image = placeholderImage?.withRenderingMode(.alwaysTemplate)
+        tintColor = .lightGray
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

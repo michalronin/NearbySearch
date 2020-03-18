@@ -11,6 +11,15 @@ import UIKit
 fileprivate var containerView: UIView!
 
 extension UIViewController {
+    func presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+        DispatchQueue.main.async {
+            let alertVC = AlertViewController(title: title, message: message, buttonTitle: buttonTitle)
+            alertVC.modalPresentationStyle = .overFullScreen
+            alertVC.modalTransitionStyle = .crossDissolve
+            self.present(alertVC, animated: true)
+        }
+    }
+    
     func adjustLargeTitleSize() {
       guard let title = title else { return }
 
