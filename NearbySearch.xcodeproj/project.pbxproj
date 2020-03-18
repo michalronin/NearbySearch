@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		303417EC24221AE700FB34A8 /* PlaceDetailContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */; };
 		3085857C241E6F1A003E6EA2 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857B241E6F1A003E6EA2 /* TitleLabel.swift */; };
 		3085857E241E7111003E6EA2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857D241E7111003E6EA2 /* SearchButton.swift */; };
 		30858580241E7989003E6EA2 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085857F241E7989003E6EA2 /* PlacesListViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailContainerViewController.swift; sourceTree = "<group>"; };
 		3085857B241E6F1A003E6EA2 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		3085857D241E7111003E6EA2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		3085857F241E7989003E6EA2 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		303417E82422162600FB34A8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		3085858B241FA15B003E6EA2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		30A220B6241E662E001C61A4 /* NearbySearch */ = {
 			isa = PBXGroup;
 			children = (
+				303417E82422162600FB34A8 /* ViewControllers */,
 				30BB0AD824212336009A1533 /* Extensions */,
 				30858593241FA216003E6EA2 /* Support */,
 				30858592241FA1FB003E6EA2 /* Managers */,
@@ -269,6 +280,7 @@
 				30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */,
 				30A220BA241E662E001C61A4 /* SceneDelegate.swift in Sources */,
 				30858588241E94FE003E6EA2 /* PlaceTableViewCell.swift in Sources */,
+				303417EC24221AE700FB34A8 /* PlaceDetailContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
