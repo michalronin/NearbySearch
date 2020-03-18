@@ -14,14 +14,15 @@ class NetworkManager {
     let cache = NSCache<NSString, UIImage>()
     
     fileprivate let apiKey = "&key=AIzaSyDMJixaDksmb__33XzQiTjL3mRjoxcjcek"
-    private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types=restaurant"
+    private let baseUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?types="
     
     private init() {}
     
-    func getPlaces(for location: CLLocation, completed: @escaping (Result<[GoogleResponse.Place], ErrorMessage>) -> Void) {
+    func getPlaces(for location: CLLocation, type: PlaceType, completed: @escaping (Result<[GoogleResponse.Place], ErrorMessage>) -> Void) {
         let lat = String(location.coordinate.latitude)
         let lon = String(location.coordinate.longitude)
-        let endpoint = baseUrl + "&location=" + lat + "," + lon + "&radius=500" + apiKey
+        let latLon = "&location=\(lat),\(lon)"
+        let endpoint = baseUrl + type.rawValue + latLon + "&radius=500" + apiKey
         print(endpoint)
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidRequest))

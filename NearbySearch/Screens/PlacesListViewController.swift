@@ -69,12 +69,43 @@ class PlacesListViewController: UIViewController {
     }
     
     func getPlaces(for location: CLLocation) {
-        NetworkManager.shared.getPlaces(for: location) { [weak self] result in
+        NetworkManager.shared.getPlaces(for: location, type: .restaurant) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let places):
-                self.places = places
+                self.places.append(contentsOf: places)
+                self.places.sort { $0.rating > $1.rating }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error loading: \(error.rawValue)")
+            }
+        }
+        
+        NetworkManager.shared.getPlaces(for: location, type: .bar) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let places):
+                self.places.append(contentsOf: places)
+                self.places.sort { $0.rating > $1.rating }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error loading: \(error.rawValue)")
+            }
+        }
+        
+        NetworkManager.shared.getPlaces(for: location, type: .cafe) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let places):
+                self.places.append(contentsOf: places)
+                self.places.sort { $0.rating > $1.rating }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
