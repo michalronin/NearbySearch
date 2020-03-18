@@ -82,7 +82,7 @@ class PlaceDetailContainerViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
-        locationLabel.text = place.name // TODO: replace to actual address
+        locationLabel.text = place.vicinity
         if #available(iOS 13.0, *) {
             ratingImageView.image = UIImage(systemName: "star")
         } else {
