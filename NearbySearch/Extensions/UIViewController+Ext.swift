@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate var containerView: UIView!
+
 extension UIViewController {
     func adjustLargeTitleSize() {
       guard let title = title else { return }
@@ -24,5 +26,44 @@ extension UIViewController {
       navigationController?.navigationBar.largeTitleTextAttributes =
         [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: fontSize)
       ]
+    }
+    
+    func showLoadingView() {
+        containerView = UIView(frame: view.bounds)
+        view.addSubview(containerView)
+        
+        if #available(iOS 13.0, *) {
+            containerView.backgroundColor = .systemBackground
+        } else {
+            containerView.backgroundColor = .white
+        }
+        containerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.25) {
+            containerView.alpha = 0.8
+        }
+        let activityIndicator = UIActivityIndicatorView()
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .large
+        } else {
+            activityIndicator.style = .gray
+        }
+        containerView.addSubview(activityIndicator)
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        activityIndicator.startAnimating()
+    }
+    
+    func dismissLoadingView() {
+        DispatchQueue.main.async {
+            containerView.removeFromSuperview()
+            containerView = nil
+        }
     }
 }

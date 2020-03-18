@@ -69,9 +69,10 @@ class PlacesListViewController: UIViewController {
     }
     
     func getPlaces(for location: CLLocation) {
+        showLoadingView()
         NetworkManager.shared.getPlaces(for: location, type: .restaurant) { [weak self] result in
             guard let self = self else { return }
-            
+            self.dismissLoadingView()
             switch result {
             case .success(let places):
                 self.places.append(contentsOf: places)
@@ -81,6 +82,7 @@ class PlacesListViewController: UIViewController {
                 }
             case .failure(let error):
                 print("Error loading: \(error.rawValue)")
+                
             }
         }
         
@@ -148,7 +150,7 @@ extension PlacesListViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
             locationManager?.requestLocation()
         }
     }
