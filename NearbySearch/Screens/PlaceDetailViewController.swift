@@ -50,7 +50,6 @@ class PlaceDetailViewController: UIViewController {
         if #available(iOS 13.0, *) {
             detailView.backgroundColor = .secondarySystemBackground
         } else {
-            // Fallback on earlier versions
             detailView.backgroundColor = .lightGray
         }
         detailView.layer.cornerRadius = 20
