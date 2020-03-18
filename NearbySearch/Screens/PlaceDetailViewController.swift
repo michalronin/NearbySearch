@@ -47,6 +47,13 @@ class PlaceDetailViewController: UIViewController {
         view.addSubview(detailView)
         let padding: CGFloat = 20
         detailView.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 13.0, *) {
+            detailView.backgroundColor = .secondarySystemBackground
+        } else {
+            // Fallback on earlier versions
+            detailView.backgroundColor = .lightGray
+        }
+        detailView.layer.cornerRadius = 20
         NSLayoutConstraint.activate([
             placeImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             placeImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
@@ -56,7 +63,7 @@ class PlaceDetailViewController: UIViewController {
             detailView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             detailView.topAnchor.constraint(equalTo: placeImageView.bottomAnchor, constant: padding),
             detailView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            detailView.heightAnchor.constraint(equalToConstant: 180)
+            detailView.heightAnchor.constraint(equalToConstant: 140)
         ])
     }
 }
