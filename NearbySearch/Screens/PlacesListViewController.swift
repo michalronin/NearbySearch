@@ -58,7 +58,7 @@ class PlacesListViewController: UIViewController {
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         locationManager?.distanceFilter = 50
-        locationManager?.requestLocation()
+//        locationManager?.requestLocation()
     }
     
     func pushPlaceDetailViewController(place: GoogleResponse.Place) {
@@ -69,7 +69,6 @@ class PlacesListViewController: UIViewController {
     }
     
     func getPlaces(for location: CLLocation) {
-        showLoadingView()
         NetworkManager.shared.getPlaces(for: location, type: .restaurant) { [weak self] result in
             guard let self = self else { return }
             self.dismissLoadingView()
@@ -158,6 +157,7 @@ extension PlacesListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
             currentLocation = locations.first
+            showLoadingView()
             getPlaces(for: currentLocation!)
         }
     }
