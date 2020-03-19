@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct GoogleResponse: Codable, Hashable {
+struct GoogleResponse: Codable {
     let results: [Place]
     
-    struct Place: Codable, Hashable {
+    struct Place: Codable {
         let name: String
         let rating: Double
         var openingHours: OpeningHours?
         var photos: [Photo]?
         let vicinity: String
         
-        struct OpeningHours: Codable, Hashable {
+        struct OpeningHours: Codable {
             let openNow: Bool
         }
         
-        struct Photo: Codable, Hashable {
+        struct Photo: Codable {
             let photoReference: String
         }
     }
