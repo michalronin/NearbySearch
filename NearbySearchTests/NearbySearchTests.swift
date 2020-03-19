@@ -10,13 +10,12 @@ import XCTest
 @testable import NearbySearch
 
 class NearbySearchTests: XCTestCase {
-
     override func setUp() {
-        
+        super.setUp()
     }
 
     override func tearDown() {
-        
+        super.tearDown()
     }
     
     func testDecoding() throws {
