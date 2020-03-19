@@ -26,7 +26,18 @@
 		30BB0AD4241FD35E009A1533 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */; };
 		30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */; };
 		30BB0ADA24212346009A1533 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD924212346009A1533 /* UIViewController+Ext.swift */; };
+		30C416E62423740400C5A749 /* NearbySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C416E52423740400C5A749 /* NearbySearchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30C416E82423740400C5A749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30A220AC241E662E001C61A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30A220B3241E662E001C61A4;
+			remoteInfo = NearbySearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		303417EB24221AE700FB34A8 /* PlaceDetailContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailContainerViewController.swift; sourceTree = "<group>"; };
@@ -50,10 +61,20 @@
 		30BB0AD3241FD35E009A1533 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageView.swift; sourceTree = "<group>"; };
 		30BB0AD924212346009A1533 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		30C416E32423740400C5A749 /* NearbySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30C416E52423740400C5A749 /* NearbySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbySearchTests.swift; sourceTree = "<group>"; };
+		30C416E72423740400C5A749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		30A220B1241E662E001C61A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C416E02423740400C5A749 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				30A220B6241E662E001C61A4 /* NearbySearch */,
+				30C416E42423740400C5A749 /* NearbySearchTests */,
 				30A220B5241E662E001C61A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				30A220B4241E662E001C61A4 /* NearbySearch.app */,
+				30C416E32423740400C5A749 /* NearbySearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +225,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		30C416E42423740400C5A749 /* NearbySearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				30C416E52423740400C5A749 /* NearbySearchTests.swift */,
+				30C416E72423740400C5A749 /* Info.plist */,
+			);
+			path = NearbySearchTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,6 +254,24 @@
 			productReference = 30A220B4241E662E001C61A4 /* NearbySearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		30C416E22423740400C5A749 /* NearbySearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30C416EC2423740400C5A749 /* Build configuration list for PBXNativeTarget "NearbySearchTests" */;
+			buildPhases = (
+				30C416DF2423740400C5A749 /* Sources */,
+				30C416E02423740400C5A749 /* Frameworks */,
+				30C416E12423740400C5A749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30C416E92423740400C5A749 /* PBXTargetDependency */,
+			);
+			name = NearbySearchTests;
+			productName = NearbySearchTests;
+			productReference = 30C416E32423740400C5A749 /* NearbySearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,6 +284,10 @@
 				TargetAttributes = {
 					30A220B3241E662E001C61A4 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					30C416E22423740400C5A749 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 30A220B3241E662E001C61A4;
 					};
 				};
 			};
@@ -251,6 +305,7 @@
 			projectRoot = "";
 			targets = (
 				30A220B3241E662E001C61A4 /* NearbySearch */,
+				30C416E22423740400C5A749 /* NearbySearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +317,13 @@
 			files = (
 				30A220C4241E662F001C61A4 /* LaunchScreen.storyboard in Resources */,
 				30A220C1241E662F001C61A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30C416E12423740400C5A749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +354,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30C416DF2423740400C5A749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C416E62423740400C5A749 /* NearbySearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30C416E92423740400C5A749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30A220B3241E662E001C61A4 /* NearbySearch */;
+			targetProxy = 30C416E82423740400C5A749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		30A220C2241E662F001C61A4 /* LaunchScreen.storyboard */ = {
@@ -458,6 +536,46 @@
 			};
 			name = Release;
 		};
+		30C416EA2423740400C5A749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJC4FJ4SY5;
+				INFOPLIST_FILE = NearbySearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalronin.NearbySearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbySearch.app/NearbySearch";
+			};
+			name = Debug;
+		};
+		30C416EB2423740400C5A749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJC4FJ4SY5;
+				INFOPLIST_FILE = NearbySearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michalronin.NearbySearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbySearch.app/NearbySearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -475,6 +593,15 @@
 			buildConfigurations = (
 				30A220C9241E662F001C61A4 /* Debug */,
 				30A220CA241E662F001C61A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30C416EC2423740400C5A749 /* Build configuration list for PBXNativeTarget "NearbySearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30C416EA2423740400C5A749 /* Debug */,
+				30C416EB2423740400C5A749 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
