@@ -27,6 +27,7 @@
 		30BB0AD72420CCEE009A1533 /* PlaceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD62420CCEE009A1533 /* PlaceImageView.swift */; };
 		30BB0ADA24212346009A1533 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB0AD924212346009A1533 /* UIViewController+Ext.swift */; };
 		30C416E62423740400C5A749 /* NearbySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C416E52423740400C5A749 /* NearbySearchTests.swift */; };
+		30C416EE24237F6B00C5A749 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = 30C416ED24237F6B00C5A749 /* places.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		30C416E32423740400C5A749 /* NearbySearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbySearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C416E52423740400C5A749 /* NearbySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbySearchTests.swift; sourceTree = "<group>"; };
 		30C416E72423740400C5A749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C416ED24237F6B00C5A749 /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 		30C416E42423740400C5A749 /* NearbySearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				30C416ED24237F6B00C5A749 /* places.json */,
 				30C416E52423740400C5A749 /* NearbySearchTests.swift */,
 				30C416E72423740400C5A749 /* Info.plist */,
 			);
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C416EE24237F6B00C5A749 /* places.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import NearbySearch
 
 class NearbySearchTests: XCTestCase {
 
@@ -16,5 +17,15 @@ class NearbySearchTests: XCTestCase {
 
     override func tearDown() {
         
+    }
+    
+    func testDecoding() throws {
+        let bundle = Bundle(for: type(of: self))
+        let fileUrl = bundle.url(forResource: "places", withExtension: "json")
+        let data = try Data(contentsOf: fileUrl!)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        XCTAssertNoThrow(try jsonDecoder.decode(GoogleResponse.self, from: data))
     }
 }
