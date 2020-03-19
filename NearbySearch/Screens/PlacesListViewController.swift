@@ -51,6 +51,7 @@ class PlacesListViewController: UIViewController {
         tableView.register(PlaceTableViewCell.self, forCellReuseIdentifier: PlaceTableViewCell.reuseID)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        showLoadingView()
     }
     
     func configureLocationManager() {
@@ -58,7 +59,6 @@ class PlacesListViewController: UIViewController {
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
         locationManager?.distanceFilter = 50
-//        locationManager?.requestLocation()
     }
     
     func pushPlaceDetailViewController(place: GoogleResponse.Place) {
@@ -157,7 +157,7 @@ extension PlacesListViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
             currentLocation = locations.first
-            showLoadingView()
+            
             getPlaces(for: currentLocation!)
         }
     }
